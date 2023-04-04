@@ -23,7 +23,8 @@ int	main(int argc, char **argv)
 	cub = init_cub();
 	if (!cub)
 		ft_error(2);
-	check_file(cub, argv[1]);
+	check_map(cub, argv[1]);
+	//check_file(cub, argv[1]);
 	mlx_loop_hook(cub->mlx_pointer, (t_hook) rendeer_minimap, cub);
 	mlx_loop_hook(cub->mlx_pointer, ft_hook, cub);
 	mlx_loop(cub->mlx_pointer);

@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
 /*
+
 	if (!check_map(argv[1]))
 	{
 		printf("Map not valid. Onluy .cub files accepted.");
@@ -24,7 +24,7 @@
 		exit (EXIT_FAILURE);
 	printf("Map saved in map.cub");
 */
-/*
+
 int	check_map(t_cub *cub, char *str)
 {
 	if (ft_strncmp(str + ft_strlen(str) - 4, ".cub", 4))
@@ -60,4 +60,3 @@ int	check_map2(t_cub *cub)
 	(void) cub;
 	return (1);
 }
-*/
