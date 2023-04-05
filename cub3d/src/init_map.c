@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
+/*
 void	init_map(t_cub *cub)
 {
 	cub->len = init_text(cub);
@@ -76,4 +76,4 @@ int	init_text(t_cub *cub)
 		free (tmp);
 	}
 	return (i);
-}
+}*/

@@ -21,6 +21,12 @@ void	ft_error(int i)
 		printf("Memory allocation failed");
 	if (i == 3)
 		printf(".cub file not valid");
+	if (i == 4)
+		printf("Miss textures path\n");
+	if (i == 5)
+		printf("Check code color\n");
+	if (i == 6)
+		printf("Invalid map, miss wall\n");
 	exit(1);
 }
 

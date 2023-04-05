@@ -16,12 +16,13 @@ void	free_cub(t_cub *cub)
 {
 	if (cub->map)
 		free_tab(cub->map);
-	if (cub->text)
-		free_tab(cub->text);
+	//if (cub->text)
+	//	free_tab(cub->text);
 	if (cub->player)
 		free(cub->player);
-	if (cub->ray)
-		free(cub->ray);
+	// /!\ NON ALLOUE ICI! (Ou PTR invalide?)
+	// if (cub->ray)
+	// 	free(cub->ray);
 	mlx_terminate(cub->mlx_pointer);
 	close(cub->fd);
 	if (cub)
@@ -40,7 +41,6 @@ void	free_tab(char **tab)
 		free(tab[i]);
 		i++;
 	}
-	free (tab[i]);
 	if (tab)
 		free(tab);
 }

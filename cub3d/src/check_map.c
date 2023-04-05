@@ -1,6 +1,6 @@
 #include "../cub3d.h"
 
-int	find_map(t_cub *cub)
+void	find_map(t_cub *cub)
 {
 	int 	j;
 	int 	i;
@@ -18,78 +18,79 @@ int	find_map(t_cub *cub)
 	size_j = 0;
 	while(str[j])
 	{
-		cub->map[i] = malloc(sizeof(char) * ft_strlen(str[j]+1));//malloc?
+		cub->map[i] = malloc(sizeof(char) * ft_strlen(str[j] + 1));
 		cub->map[i] = str[j];
 		size_j = ft_strlen(str[j]);
-		cub->map[i][size_j+1]= '\0';
-		///print la map
-		//printf("%s\n", cub->map[i]);	
+		cub->map[i][size_j + 1]= '\0';	
 		i++;
 		j++;
 	}
 	cub->map[i] = NULL;
 	check_map(cub->map, len);
-	return(0);
 }
 
-int	check_map(char **str, int len)
+void	check_map(char **str, int len)
 {
-	int i = 0;
-	int j = 0;
+	int i;
+	int j;
     int len_i;
 
+	j = 0;
 	while(j < len)
 	{
 		i = 0;
         len_i =(int) ft_strlen(str[j]);
-		while(str[j][i] != '\0' )
+		while(str[j][i])
 		{
 			if(str[j][i] == '0')
 			 { 
-				if(i > 0)
-				{
-					if(str[j][i-1] != '1' && str[j][i-1] != 'N' && str[j][i-1] != '0')
-						printf("error1\n");
-				}
-			     if (i < len_i)
-				{
-					if(str[j][i+1] != '1' && str[j][i+1] != 'N'&& str[j][i+1] != '0')
-						printf("error2\n");
-				}
-				 if (j > 0)
-				{
-					if(str[j-1][i] != '1' && str[j-1][i] != 'N' && str[j-1][i] != '0')
-						printf("error3\n");
-				}
-				 if (j < len-1)
+				check_map2(str, j, i , len_i);
+				if (j < len-1)
 				{
 					if(str[j+1][i] != '1' && str[j+1][i] != 'N'&& str[j+1][i] != '0')
-						printf("error4\n");
-				}
-				if (j > 0 && i > 0)
-				{
-					if (str[j-1][i-1] != '1' && str[j-1][i-1] != 'N' && str[j-1][i-1] != '0')
-						printf("error5\n");
-				}
-				if (j > 0 && i < len_i)
-				{
-					if (str[j-1][i+1] != '1' && str[j-1][i+1] != 'N' && str[j-1][i+1] != '0')
-						printf("error6\n");
+						ft_error(6);
 				}
 				if (j < len - 1 && i > 0)
 				{
 					if (str[j+1][i-1] != '1' && str[j+1][i-1] != 'N' && str[j+1][i-1] != '0')
-						printf("error7\n");
+						ft_error(6);
 				}
 				if (j < len - 1 && i < len_i)
 				{
 					if (str[j+1][i+1] != '1' && str[j+1][i+1] != 'N'&& str[j+1][i+1] != '0')
-						printf("error8\n");
+						ft_error(6);
 				}
 			 }
 			 i++;
 		}	
 		j++;
 	}
-	return(0);
+}
+void	check_map2(char **str, int j, int i, int len_i)
+{
+	if(i > 0)
+	{
+		if(str[j][i-1] != '1' && str[j][i-1] != 'N' && str[j][i-1] != '0')
+			ft_error(6);
+	}
+	if (i < len_i)
+	{
+		if(str[j][i+1] != '1' && str[j][i+1] != 'N'&& str[j][i+1] != '0')
+			ft_error(6);
+	}
+	 if (j > 0)
+	{
+		if(str[j-1][i] != '1' && str[j-1][i] != 'N' && str[j-1][i] != '0')
+			ft_error(6);
+	}
+	if (j > 0 && i > 0)
+	{
+		if (str[j-1][i-1] != '1' && str[j-1][i-1] != 'N' && str[j-1][i-1] != '0')
+			ft_error(6);
+	}
+	if (j > 0 && i < len_i)
+	{
+		if (str[j-1][i+1] != '1' && str[j-1][i+1] != 'N' && str[j-1][i+1] != '0')
+			ft_error(6);
+	}
 }

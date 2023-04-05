@@ -69,7 +69,7 @@ typedef struct s_cub
 	char		*map_cub;
 	char		**map;//la map
 	int			fd;
-	char		**text;//au dessus de la map
+	//char		**text;//au dessus de la map
 	int			len;
 	int			mapx;
 	int			mapy;
@@ -77,8 +77,8 @@ typedef struct s_cub
 	char 		*get_next;
 	int			flag;
 	char		*tmp;//remplir avec gnl  complet
-	char		**tmp_file;// complete copy file av[1], need separate in 2 parts
-	char		*NO;//copier la valeur
+	char		**tmp_file;// complete copy file av[1], separate in 2 parts
+	char		*NO;
 	char		*SO;
 	char		*WE;
 	char		*EA;
@@ -116,13 +116,15 @@ int			check_color(t_cub *cub);
 int			check_map2(t_cub *cub);*/
 
 //check_file.c
-int			check_file(t_cub *cub, char *str);
-int			find_textures(t_cub *cub);
+void		check_file(t_cub *cub, char *str);
+void		find_textures(t_cub *cub);
 int 		remoove_space( char *str, int i);
+void 		ft_isdigit( char **tmp);
 
 //check_map.c
-int			check_map(char **str, int len);
-int			find_map(t_cub *cub);
+void		check_map(char **str, int len);
+void		check_map2(char **str, int j, int i, int len_i);
+void		find_map(t_cub *cub);
 
 //utils.c
 void		ft_error(int i);
