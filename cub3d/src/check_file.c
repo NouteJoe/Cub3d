@@ -1,5 +1,5 @@
 #include "../cub3d.h"
-/*
+
 int remoove_space( char *str, int i)
 {
 	while(str[i] == ' ')
@@ -97,15 +97,15 @@ int	check_file(t_cub *cub, char *str)
 	cub->tmp_file = ft_split(cub->get_next, '\n');
 
 	// verification  du split
-	int i = 0;
+	/*int i = 0;
 	while(cub->tmp_file[i])
 	{
 	 printf("%s\n", cub->tmp_file[i]);
 	 i++;
-	 }
+	 }*/
 	//remplir les donner quand aucunes est a NULL, le reste est la carte
 	find_textures(cub);//add error
 	find_map(cub);
 	
 	return (1);
-}*/
+}

@@ -108,13 +108,13 @@ void		init_vector(t_vector *vector);
 void		init_player(t_cub *cub);
 void		find_player(t_cub *cub);
 void		find_dir(char c, t_vector *dir);
-
+/*
 // check.c
 int			check_map(t_cub *cub, char *str);
 int			check_compas(t_cub *cub);
 int			check_color(t_cub *cub);
-int			check_map2(t_cub *cub);
-/*
+int			check_map2(t_cub *cub);*/
+
 //check_file.c
 int			check_file(t_cub *cub, char *str);
 int			find_textures(t_cub *cub);
@@ -123,7 +123,7 @@ int 		remoove_space( char *str, int i);
 //check_map.c
 int			check_map(char **str, int len);
 int			find_map(t_cub *cub);
-*/
+
 //utils.c
 void		ft_error(int i);
 void		print_tab(char **tab);

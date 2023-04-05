@@ -37,8 +37,8 @@ void	rendeer_minimap(t_cub *cub)
 		}
 		i++;
 	}
-	make_player(cub, pixel_color3);
-	make_player_fov(cub, pixel_color3);
+	//make_player(cub, pixel_color3);
+	//make_player_fov(cub, pixel_color3);
 }
 
 bool	is_walkable(char c)

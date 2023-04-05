@@ -23,7 +23,7 @@
 	if (map->fd == -1)
 		exit (EXIT_FAILURE);
 	printf("Map saved in map.cub");
-*/
+
 
 int	check_map(t_cub *cub, char *str)
 {
@@ -60,3 +60,4 @@ int	check_map2(t_cub *cub)
 	(void) cub;
 	return (1);
 }
+*/
